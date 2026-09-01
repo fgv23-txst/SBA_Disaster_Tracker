@@ -2,14 +2,14 @@ import requests
 
 
 # --------------------------------
-# STEP 1: SBA API address
+# SBA API address
 # --------------------------------
 
 url = "https://lending.sba.gov/api/disasters/v1/declarations/"
 
 
 # --------------------------------
-# STEP 2: Get data from SBA
+# Get data from SBA
 # --------------------------------
 
 response = requests.get(url)
@@ -21,14 +21,14 @@ print("Total disasters:", len(data))
 
 
 # --------------------------------
-# STEP 3: Take the first disaster
+# Take the first disaster
 # --------------------------------
 
 first_disaster = data[0]
 
 
 # --------------------------------
-# STEP 4: Show disaster field names
+# Show disaster field names
 # --------------------------------
 
 print("\nAvailable Disaster Fields:")
@@ -38,14 +38,14 @@ for column in first_disaster.keys():
 
 
 # --------------------------------
-# STEP 5: Take the first county
+# Take the first county
 # --------------------------------
 
 first_county = first_disaster["primary_counties"][0]
 
 
 # --------------------------------
-# STEP 6: Show county field names
+# Show county field names
 # --------------------------------
 
 print("\nAvailable County Fields:")
@@ -55,7 +55,7 @@ for column in first_county.keys():
 
 
 # --------------------------------
-# STEP 7: Show basic disaster info
+# Show basic disaster info
 # --------------------------------
 
 print("\nFirst Disaster Information:")
@@ -84,7 +84,7 @@ print(
 
 
 # --------------------------------
-# STEP 8: Show ALL primary counties
+#Show ALL primary counties
 # --------------------------------
 
 print("\nPrimary Counties:")

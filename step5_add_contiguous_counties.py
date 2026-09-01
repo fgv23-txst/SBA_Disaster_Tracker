@@ -2,7 +2,7 @@ import requests
 import csv
 
 
-# SBA API
+# SBA API----------------------------------------------------------
 url = "https://lending.sba.gov/api/disasters/v1/declarations/"
 
 response = requests.get(url)
@@ -16,7 +16,7 @@ print("Total disasters:", len(data))
 rows = []
 
 
-# Go through every disaster
+# Go through every disaster-------------------------------
 for disaster in data:
 
     disaster_number = disaster["disaster_number"]
@@ -36,9 +36,9 @@ for disaster in data:
     fema_number = disaster["fema_number"]
 
 
-    # -------------------------
-    # PRIMARY COUNTIES
-    # -------------------------
+# ------------------------------------------------
+# PRIMARY COUNTIES
+# ------------------------------------------------
 
     for county in disaster["primary_counties"]:
 
@@ -64,9 +64,9 @@ for disaster in data:
         rows.append(row)
 
 
-    # -------------------------
-    # CONTIGUOUS COUNTIES
-    # -------------------------
+# -----------------------------------------------------
+# CONTIGUOUS COUNTIES
+# ------------------------------------------------------
 
     for county in disaster["contiguous_counties"]:
 
@@ -92,7 +92,7 @@ for disaster in data:
         rows.append(row)
 
 
-# CSV columns
+# CSV columns---------------------
 column_names = [
     "disaster_number",
     "state",
@@ -113,7 +113,7 @@ column_names = [
 ]
 
 
-# Save CSV
+# Save CSV------------------------------------
 with open(
     "sba_disaster_all_counties.csv",
     "w",

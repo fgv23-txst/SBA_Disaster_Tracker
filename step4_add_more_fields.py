@@ -56,7 +56,7 @@ for disaster in data:
 
         rows.append(row)
 
-        ## column_names for csv
+## column_names for csv
 
 column_names = [
     "disaster_number",  
@@ -96,7 +96,8 @@ with open(
     # Write all rows
     writer.writerows(rows)
 
-    ## Print the number of rows written to the CSV
+## Print the number of rows written to the CSV
+
 print("Total rows written to CSV:", len(rows))
 print("CSV created successfully.")
 print("Total county rows:", len(rows))
